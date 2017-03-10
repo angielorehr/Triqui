@@ -44,54 +44,63 @@ public class Grafica extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SWIsop3", 3, 36)); // NOI18N
         jLabel1.setText("TRIQUI");
 
+        Ficha00.setBackground(new java.awt.Color(0, 204, 204));
         Ficha00.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha00MouseClicked(evt);
             }
         });
 
+        Ficha01.setBackground(new java.awt.Color(0, 204, 204));
         Ficha01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha01MouseClicked(evt);
             }
         });
 
+        Ficha02.setBackground(new java.awt.Color(0, 204, 204));
         Ficha02.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha02MouseClicked(evt);
             }
         });
 
+        Ficha10.setBackground(new java.awt.Color(0, 204, 204));
         Ficha10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha10MouseClicked(evt);
             }
         });
 
+        Ficha11.setBackground(new java.awt.Color(0, 204, 204));
         Ficha11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha11MouseClicked(evt);
             }
         });
 
+        Ficha12.setBackground(new java.awt.Color(0, 204, 204));
         Ficha12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha12MouseClicked(evt);
             }
         });
 
+        Ficha20.setBackground(new java.awt.Color(0, 204, 204));
         Ficha20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha20MouseClicked(evt);
             }
         });
 
+        Ficha21.setBackground(new java.awt.Color(0, 204, 204));
         Ficha21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha21MouseClicked(evt);
             }
         });
 
+        Ficha22.setBackground(new java.awt.Color(0, 204, 204));
         Ficha22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha22MouseClicked(evt);
