@@ -16,6 +16,20 @@ public class Tablero {
     
     void calculartriqui(){  
     }
+    public String Asignacion(){
+        //En turno vamos a definir si es una X o una Y
+    //0 es X
+    //1 es Y
+    int turno=0;
+       
+    if(turno==0){
+            turno=1;
+            return("X");
+        }else{
+            turno=0;
+             return("O");
+    }
+}
 }
 
     

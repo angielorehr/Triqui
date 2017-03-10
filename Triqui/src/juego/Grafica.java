@@ -9,15 +9,11 @@ package juego;
  *
  * @author Estudiantes
  */
-public class Grafica extends javax.swing.JPanel {
+public class Grafica extends javax.swing.JFrame {
+    Tablero miTableroGrafico;
 
-    //En turno vamos a definir si es una X o una Y
-    //0 es X
-    //1 es Y
-    int turno=0;
-    
     /**
-     * Creates new form Tablero
+     * Creates new form Grafica
      */
     public Grafica() {
         initComponents();
@@ -33,186 +29,216 @@ public class Grafica extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        Ficha00 = new javax.swing.JButton();
         Ficha01 = new javax.swing.JButton();
         Ficha02 = new javax.swing.JButton();
-        Ficha21 = new javax.swing.JButton();
+        Ficha10 = new javax.swing.JButton();
         Ficha11 = new javax.swing.JButton();
         Ficha12 = new javax.swing.JButton();
         Ficha20 = new javax.swing.JButton();
-        Ficha00 = new javax.swing.JButton();
-        Ficha10 = new javax.swing.JButton();
+        Ficha21 = new javax.swing.JButton();
         Ficha22 = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Castellar", 3, 36)); // NOI18N
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("SWIsop3", 3, 36)); // NOI18N
         jLabel1.setText("TRIQUI");
-
-        Ficha01.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Ficha01MouseClicked(evt);
-            }
-        });
-        Ficha01.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha01ActionPerformed(evt);
-            }
-        });
-
-        Ficha21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha21ActionPerformed(evt);
-            }
-        });
-
-        Ficha11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha11ActionPerformed(evt);
-            }
-        });
-
-        Ficha12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha12ActionPerformed(evt);
-            }
-        });
 
         Ficha00.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Ficha00MouseClicked(evt);
             }
         });
-        Ficha00.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha00ActionPerformed(evt);
+
+        Ficha01.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha01MouseClicked(evt);
             }
         });
 
-        Ficha10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ficha10ActionPerformed(evt);
+        Ficha02.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha02MouseClicked(evt);
             }
         });
 
+        Ficha10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha10MouseClicked(evt);
+            }
+        });
+
+        Ficha11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha11MouseClicked(evt);
+            }
+        });
+
+        Ficha12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha12MouseClicked(evt);
+            }
+        });
+
+        Ficha20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha20MouseClicked(evt);
+            }
+        });
+
+        Ficha21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha21MouseClicked(evt);
+            }
+        });
+
+        Ficha22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ficha22MouseClicked(evt);
+            }
+        });
         Ficha22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ficha22ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(Ficha00, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Ficha01, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Ficha02, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 18, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(94, 94, 94))
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Ficha20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Ficha21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Ficha22, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Ficha10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Ficha20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Ficha10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Ficha00, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(Ficha11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(Ficha12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Ficha01, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Ficha11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Ficha21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Ficha22, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Ficha12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Ficha02, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Ficha01, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha00, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha02, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Ficha11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Ficha21, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha20, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ficha22, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Ficha00, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha02, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Ficha10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha12, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Ficha20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ficha22, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Ficha00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha00ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha00ActionPerformed
-
-    private void Ficha00MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha00MouseClicked
-
-        if(turno==0){
-            this.Ficha01.setText("X");
-            turno=1;
-        }else{
-            this.Ficha01.setText("Y");
-            turno=0;
-        }
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha00MouseClicked
-
-    private void Ficha01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha01MouseClicked
-
-        if(turno==0){
-            this.Ficha01.setText("X");
-            turno=1;
-        }else{
-            this.Ficha01.setText("Y");
-            turno=0;
-        }
-
-
-
-    }//GEN-LAST:event_Ficha01MouseClicked
 
     private void Ficha22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha22ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Ficha22ActionPerformed
 
-    private void Ficha01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha01ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha01ActionPerformed
+    private void Ficha00MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha00MouseClicked
 
-    private void Ficha21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha21ActionPerformed
+    this.Ficha00.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha00MouseClicked
 
-    private void Ficha10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha10ActionPerformed
+    private void Ficha01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha01MouseClicked
+    this.Ficha01.setText(this.miTableroGrafico.Asignacion());        // TODO add your handling code here:
+    }//GEN-LAST:event_Ficha01MouseClicked
 
-    private void Ficha11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha11ActionPerformed
+    private void Ficha02MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha02MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha11ActionPerformed
+        this.Ficha02.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha02MouseClicked
 
-    private void Ficha12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha12ActionPerformed
+    private void Ficha10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha10MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha12ActionPerformed
+        this.Ficha10.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha10MouseClicked
 
+    private void Ficha11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha11MouseClicked
+        // TODO add your handling code here:
+        this.Ficha11.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha11MouseClicked
+
+    private void Ficha12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha12MouseClicked
+        // TODO add your handling code here:
+        this.Ficha12.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha12MouseClicked
+
+    private void Ficha20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha20MouseClicked
+        // TODO add your handling code here:
+        this.Ficha20.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha20MouseClicked
+
+    private void Ficha21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha21MouseClicked
+        // TODO add your handling code here:
+        this.Ficha21.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha21MouseClicked
+
+    private void Ficha22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ficha22MouseClicked
+        // TODO add your handling code here:
+        this.Ficha22.setText(this.miTableroGrafico.Asignacion());
+    }//GEN-LAST:event_Ficha22MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Grafica().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Ficha00;
